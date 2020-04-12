@@ -9,7 +9,7 @@ import org.springframework.context.ApplicationContext;
 public class FunWithDiApplication {
 
 	public static void main(String[] args) {
-		 ApplicationContext ctx = SpringApplication.run(FunWithDiApplication.class, args);
+		ApplicationContext ctx = SpringApplication.run(FunWithDiApplication.class, args);
 
 		System.out.println("------------------------ CONTROLLER ");
 		MyController constructorInjectedBean = (MyController) ctx.getBean(
