@@ -8,7 +8,7 @@ import org.springframework.stereotype.Controller;
 public class PropertyInjectedController extends MyController {
 
     @Autowired
-    private GreetingServiceImpl greetingService ;
+    public GreetingServiceImpl greetingService ;
 
     @Override
     public String sayHello() {
