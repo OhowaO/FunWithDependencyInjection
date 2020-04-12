@@ -1,15 +1,16 @@
 package com.asperger.funwithdi.controller;
 
 
+import com.asperger.funwithdi.service.ConstructorGreetingService;
 import com.asperger.funwithdi.service.GreetingServiceImpl;
 import org.springframework.stereotype.Controller;
 
 @Controller
 public class ConstructorInjectedController extends MyController{
 
-    private final GreetingServiceImpl greetingService;
+    private final ConstructorGreetingService greetingService;
 
-    public ConstructorInjectedController(GreetingServiceImpl greetingService) {
+    public ConstructorInjectedController(ConstructorGreetingService greetingService) {
         this.greetingService = greetingService;
     }
 

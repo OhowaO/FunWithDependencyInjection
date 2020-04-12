@@ -1,6 +1,7 @@
 package com.asperger.funwithdi.controller;
 
 import com.asperger.funwithdi.service.GreetingServiceImpl;
+import com.asperger.funwithdi.service.SetterGreetingService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -15,11 +16,11 @@ class SetterInjectedControllerTest {
     @BeforeEach
     void setUp() {
         this.controller = new SetterInjectedController();
-        this.controller.setGreetingService(new GreetingServiceImpl());
+        this.controller.setGreetingService(new SetterGreetingService());
     }
 
     @Test
     void sayHelloTest() {
-        this.controller.sayHello().equals(new GreetingServiceImpl().getGreeting());
+        this.controller.sayHello().equals(new SetterGreetingService().getGreeting());
     }
 }
