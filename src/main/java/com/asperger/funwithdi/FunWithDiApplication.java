@@ -11,7 +11,11 @@ public class FunWithDiApplication {
 	public static void main(String[] args) {
 		ApplicationContext ctx = SpringApplication.run(FunWithDiApplication.class, args);
 
-		System.out.println("------------------------ CONTROLLER ");
+		MyController controllerInjectedBean = (MyController) ctx.getBean(
+				"greetingServiceController");
+		System.out.println(controllerInjectedBean.sayHello());
+
+		System.out.println("------------------------ CONSTRUCTOR ");
 		MyController constructorInjectedBean = (MyController) ctx.getBean(
 				"constructorInjectedController");
 		System.out.println(constructorInjectedBean.sayHello());
@@ -26,6 +30,11 @@ public class FunWithDiApplication {
 		MyController setterInjectedBean = (MyController) ctx.getBean(
 				"setterInjectedController");
 		System.out.println(setterInjectedBean.sayHello());
+
+		System.out.println("------------------------ I18nController ");
+		MyController i18nControllerBean = (MyController) ctx.getBean(
+				"i18nController");
+		System.out.println(i18nControllerBean.sayHello());
 
 	}
 

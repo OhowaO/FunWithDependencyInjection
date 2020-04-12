@@ -16,6 +16,6 @@ class GreetingServiceImplTest {
 
     @Test
     void getGreetingTest() {
-        this.greetingService.getGreeting().equals(new String("Hi there!"));
+        this.greetingService.getGreeting().equals(new String("Hello from Greeting Service Impl which is the primary bean"));
     }
 }
