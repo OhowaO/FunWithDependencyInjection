@@ -8,10 +8,12 @@ import static org.junit.jupiter.api.Assertions.*;
 class GreetingServiceImplTest {
 
     private GreetingServiceImpl greetingService;
+    private GreetingRepository greetingRepository;
 
     @BeforeEach
     void setUp() {
-        this.greetingService = new GreetingServiceImpl();
+        this.greetingRepository = new GreetingRepositoryImpl();
+        this.greetingService = new GreetingServiceImpl(this.greetingRepository);
     }
 
     @Test
